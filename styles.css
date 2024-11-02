@@ -543,6 +543,16 @@ nav {
   }
 }
 
+.footer__socials {
+  display: flex;                /* Use flexbox */
+  justify-content: center;      /* Center the items horizontally */
+  margin-top: 10px;            /* Adjust spacing above the icons */
+}
+
+.footer__socials a {
+  margin: 0 10px;              /* Optional: space between icons */
+}
+
 @media (width > 1024px) {
   .order__grid {
     gap: 2rem;
