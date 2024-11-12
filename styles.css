@@ -74,7 +74,7 @@ body {
 }
 
 .header {
-  background-image: url("/assets/bg.jpg");
+  background-image: url("assets/bg.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -196,7 +196,7 @@ nav {
 }
 
 .banner__card:nth-child(1) {
-  background-image: url("/assets/banner1.jpg");
+  background-image: url("assets/banner1.jpg");
 }
 
 .banner__card:nth-child(2) {
@@ -338,7 +338,7 @@ nav {
 }
 
 .footer {
-  background-image: url("assets/joniefooter.png");
+  background-color: black;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -543,16 +543,6 @@ nav {
   }
 }
 
-.footer__socials {
-  display: flex;                /* Use flexbox */
-  justify-content: center;      /* Center the items horizontally */
-  margin-top: 10px;            /* Adjust spacing above the icons */
-}
-
-.footer__socials a {
-  margin: 0 10px;              /* Optional: space between icons */
-}
-
 @media (width > 1024px) {
   .order__grid {
     gap: 2rem;
@@ -591,3 +581,30 @@ nav {
   }
 }
 
+
+.banner__container1 {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8rem; /* Space between images */
+
+  animation: scroll 45s linear infinite;
+}
+
+.banner__container1 img {
+  height: 200px;
+  border-radius: 1rem; /* Make the image circular */
+}
+
+/* Add a new class for the text below the image */
+.banner__container1 img + p { 
+  text-align: below; /* Center the text */
+  font-size: 1rem;  /* Adjust font size as needed */
+  margin-top: 1rem; /* Add some space between image and text */
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 4rem));
+  }
+}
