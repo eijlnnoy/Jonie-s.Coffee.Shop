@@ -338,7 +338,7 @@ nav {
 }
 
 .footer {
-  background-color: black;
+  background-image: url(assets/joniefooter.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
