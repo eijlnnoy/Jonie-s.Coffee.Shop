@@ -108,6 +108,11 @@ nav {
   font-size: 1.5rem;
   color: var(--white);
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav__menu__btn:active {
+  transform: scale(0.95);
 }
 
 .nav__links {
@@ -126,10 +131,12 @@ nav {
   transition: 0.5s;
   z-index: -1;
   transform: translateY(-100%);
+  opacity: 0;
 }
 
 .nav__links.open {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .nav__links a {
@@ -355,7 +362,7 @@ nav {
 }
 
 .footer__content p {
-  font-weight: 5500;
+  font-weight: 500;
   color: var(--white);
   line-height: 1.75rem;
 }
@@ -401,7 +408,267 @@ nav {
   text-align: center;
 }
 
-@media (width > 540px) {
+/* Styling for Media Section */
+.media__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.media__poster,
+.media__video {
+  flex: 1;
+}
+
+.media__poster img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.media__video iframe {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.banner__container1 {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  animation: scroll 45s linear infinite;
+}
+
+.banner__container1 img {
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.banner__container1 img + p { 
+  text-align: below;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 4rem));
+  }
+}
+
+/* Back to Home Button */
+.back-to-home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--white);
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateX(-5px);
+}
+
+.back-to-home i {
+  font-size: 24px;
+  color: var(--white);
+}
+
+/* ============================================
+   ENHANCED MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Small Mobile Phones (up to 480px) */
+@media (max-width: 480px) {
+  .section__container {
+    padding: 3rem 1rem;
+  }
+
+  .section__header {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .section__description {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  /* Back Button Mobile */
+  .back-to-home {
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+  }
+
+  .back-to-home i {
+    font-size: 20px;
+  }
+
+  /* Navigation Mobile */
+  .nav__header {
+    padding: 0.75rem;
+  }
+
+  .nav__logo img {
+    max-width: 120px;
+  }
+
+  .nav__menu__btn {
+    font-size: 1.25rem;
+  }
+
+  .nav__links {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    top: 55px;
+  }
+
+  /* Header Mobile */
+  .header__content h2 {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header__content h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .header__content h1 span {
+    font-size: 2rem;
+  }
+
+  /* Banner Cards Mobile */
+  .banner__container {
+    grid-auto-rows: 150px;
+  }
+
+  .banner__card {
+    padding: 0.75rem;
+  }
+
+  .banner__card p {
+    font-size: 1rem;
+  }
+
+  .banner__card h4 {
+    font-size: 1.5rem;
+  }
+
+  /* Banner Images Mobile */
+  .banner__container1 {
+    gap: 4rem;
+  }
+
+  .banner__container1 img {
+    height: 150px;
+  }
+
+  /* Order Cards Mobile */
+  .order__container h3 {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .order__card {
+    padding: 1.5rem 1rem;
+  }
+
+  .order__card img {
+    max-width: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  .order__card h4 {
+    font-size: 1.25rem;
+  }
+
+  .order__card p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Event Section Mobile */
+  .event__details h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Media Section Mobile */
+  .media__video iframe {
+    height: 250px;
+  }
+
+  /* Footer Mobile */
+  .footer__logo img {
+    max-width: 180px;
+  }
+
+  .footer__content p {
+    font-size: 0.9rem;
+  }
+
+  .footer__links li {
+    font-size: 0.9rem;
+  }
+
+  .footer__socials a {
+    font-size: 1.25rem;
+  }
+
+  .footer__bar {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Devices (up to 360px) */
+@media (max-width: 360px) {
+  .section__header {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  .header__content h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .header__content h1 span {
+    font-size: 1.75rem;
+  }
+
+  .header__content h2 {
+    font-size: 1.1rem;
+  }
+
+  .order__card img {
+    max-width: 180px;
+  }
+
+  .banner__container1 img {
+    height: 120px;
+  }
+
+  .media__video iframe {
+    height: 200px;
+  }
+}
+
+/* Tablets (540px - 768px) */
+@media (min-width: 540px) and (max-width: 768px) {
   .banner__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -413,8 +680,22 @@ nav {
   .order__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Better spacing for tablets */
+  .section__container {
+    padding: 4rem 1.5rem;
+  }
+
+  .header__content h1 {
+    font-size: 3.5rem;
+  }
+
+  .banner__container1 img {
+    height: 180px;
+  }
 }
 
+/* Standard Tablet and Above (768px+) */
 @media (width > 768px) {
   nav {
     position: static;
@@ -453,6 +734,7 @@ nav {
     justify-content: flex-end;
     background-color: transparent;
     transform: none;
+    opacity: 1;
     z-index: 1;
   }
 
@@ -479,6 +761,10 @@ nav {
 
   .header__content h1 {
     text-align: left;
+  }
+
+  .banner__container {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .banner__card {
@@ -541,70 +827,83 @@ nav {
   .footer__socials {
     justify-content: flex-end;
   }
+
+  .media__container {
+    flex-direction: row;
+  }
 }
 
+/* Media Section Mobile/Tablet */
+@media (max-width: 768px) {
+  .media__container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .media__video iframe {
+    height: 300px;
+  }
+}
+
+/* Large Desktop (1024px+) */
 @media (width > 1024px) {
   .order__grid {
     gap: 2rem;
   }
-}
 
-/* Styling for Media Section */
-.media__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Align items vertically centered */
-  gap: 2rem; /* Space between poster and video */
-  padding: 2rem 0;
-}
-
-.media__poster,
-.media__video {
-  flex: 1; /* Allow both elements to take equal width */
-}
-
-.media__poster img {
-  width: 100%; /* Ensure poster image is responsive */
-  border-radius: 8px; /* Optional: rounded corners for the poster */
-}
-
-.media__video iframe {
-  width: 100%; /* Ensure video fits */
-  border-radius: 8px; /* Optional: rounded corners for video */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .media__container {
-    flex-direction: column; /* Stack on smaller screens */
-    gap: 1.5rem; /* Space adjustment for smaller screens */
+  .section__container {
+    padding: 5rem 2rem;
   }
 }
 
+/* Landscape Mode for Mobile Devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .section__container {
+    padding: 2rem 1rem;
+  }
 
-.banner__container1 {
-  width: max-content;
-  display: flex;
-  align-items: center;
-  gap: 8rem; /* Space between images */
+  .header__content h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
 
-  animation: scroll 45s linear infinite;
+  .header__content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav__logo img {
+    max-width: 120px;
+  }
+
+  .banner__container {
+    grid-auto-rows: 120px;
+  }
+
+  .media__video iframe {
+    height: 250px;
+  }
 }
 
-.banner__container1 img {
-  height: 200px;
-  border-radius: 1rem; /* Make the image circular */
+/* Smooth Transitions for All Interactive Elements */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Add a new class for the text below the image */
-.banner__container1 img + p { 
-  text-align: below; /* Center the text */
-  font-size: 1rem;  /* Adjust font size as needed */
-  margin-top: 1rem; /* Add some space between image and text */
+button, a, .btn, .nav__links a, .order__card, .banner__card {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
-@keyframes scroll {
-  to {
-    transform: translateX(calc(-50% - 4rem));
+/* Ensure touch targets are at least 44x44px on mobile */
+@media (max-width: 768px) {
+  .nav__links a,
+  .btn,
+  .footer__socials a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
